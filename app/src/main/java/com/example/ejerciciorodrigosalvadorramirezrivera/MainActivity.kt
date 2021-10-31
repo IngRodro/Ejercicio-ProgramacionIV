@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Se asignan los objetos de la vista a las variables anteriores
         et_Nombre = findViewById(R.id.et_Nombre)
         et_Apellido = findViewById(R.id.et_Apellido)
         sp_Departamento = findViewById(R.id.sp_Departamento)
@@ -32,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         et_Telefono = findViewById(R.id.et_Telefono)
         tvDatos = findViewById(R.id.tv_Datos)
 
-        //Lenando el spinner de Departamentos
         val departamentos = arrayOf(
             "Seleccione una opcion",
             "San Salvador",
@@ -53,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, departamentos)
         sp_Departamento.adapter = adaptador
 
-        //Funcion para recoger un listado de municipios de acuerdo a un departamento
         fun getMunicipios(departamento:String):ArrayList<String>{
             val municipios= arrayListOf<String>()
             when(departamento){
@@ -101,7 +98,6 @@ class MainActivity : AppCompatActivity() {
             return municipios
         }
 
-        //Esta parte simula el evento ItemChange de una lista
         sp_Departamento?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {}
 
